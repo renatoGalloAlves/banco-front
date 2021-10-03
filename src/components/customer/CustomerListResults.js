@@ -85,7 +85,7 @@ const CustomerListResults = ({ customers, ...rest }) => {
                     {customer.numero}
                   </TableCell>
                   <TableCell>
-                    {customer.dv}
+                    {customer.digito}
                   </TableCell>
                   <TableCell>
                     {moment(customer.abertura).format('DD/MM/YYYY')}

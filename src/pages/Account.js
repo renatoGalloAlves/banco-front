@@ -66,7 +66,7 @@ const Account = () => {
                   nome={contaDetalhe.titular.nome}
                   numero={contaDetalhe.numero}
                   agencia={contaDetalhe.agencia}
-                  dv={contaDetalhe.dv}
+                  dv={contaDetalhe.digito}
                   abertura={contaDetalhe.abertura}
                   tipo={contaDetalhe.tipo}
                 />
