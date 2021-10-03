@@ -1,17 +1,15 @@
-import moment from 'moment';
+import PropTypes from 'prop-types';
 import {
   Avatar,
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   Divider,
   Typography
 } from '@material-ui/core';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
+  avatar: '/static/images/avatars/avatar_4.png',
   city: 'Los Angeles',
   country: 'USA',
   jobTitle: 'Senior Developer',
@@ -19,8 +17,8 @@ const user = {
   timezone: 'GTM-7'
 };
 
-const AccountProfile = (props) => (
-  <Card {...props}>
+const AccountProfile = ({ nome, email, cpf }) => (
+  <Card>
     <CardContent>
       <Box
         sx={{
@@ -35,39 +33,38 @@ const AccountProfile = (props) => (
             height: 100,
             width: 100
           }}
+          aria-label={`Foto de ${nome}`}
         />
         <Typography
           color="textPrimary"
           gutterBottom
           variant="h3"
+          aria-label={`Nome do cliente: ${nome}`}
         >
-          {user.name}
+          {nome}
         </Typography>
         <Typography
-          color="textSecondary"
-          variant="body1"
+          color="textPrimary"
+          variant="subtitle2"
         >
-          {`${user.city} ${user.country}`}
+          {`CPF: ${cpf}`}
         </Typography>
         <Typography
-          color="textSecondary"
-          variant="body1"
+          color="textPrimary"
+          variant="subtitle2"
         >
-          {`${moment().format('hh:mm A')} ${user.timezone}`}
+          {`E-mail: ${email}`}
         </Typography>
       </Box>
     </CardContent>
     <Divider />
-    <CardActions>
-      <Button
-        color="primary"
-        fullWidth
-        variant="text"
-      >
-        Upload picture
-      </Button>
-    </CardActions>
   </Card>
 );
+
+AccountProfile.propTypes = {
+  nome: PropTypes.string,
+  email: PropTypes.string,
+  cpf: PropTypes.string,
+};
 
 export default AccountProfile;

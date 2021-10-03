@@ -6,13 +6,12 @@ import LatestProducts from '../components/dashboard/LatestProducts';
 import Sales from '../components/dashboard/Sales';
 import TasksProgress from '../components/dashboard/TasksProgress';
 import TotalCustomers from '../components/dashboard/TotalCustomers';
-import TotalProfit from '../components/dashboard/TotalProfit';
 import TrafficByDevice from '../components/dashboard/TrafficByDevice';
 
 const Dashboard = () => (
   <>
     <Helmet>
-      <title>Dashboard | Material Kit</title>
+      <title>Dashboard | Banco Front</title>
     </Helmet>
     <Box
       sx={{
@@ -52,15 +51,6 @@ const Dashboard = () => (
             xs={12}
           >
             <TasksProgress />
-          </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <TotalProfit sx={{ height: '100%' }} />
           </Grid>
           <Grid
             item

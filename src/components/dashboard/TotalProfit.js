@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Avatar,
   Card,
@@ -8,8 +9,8 @@ import {
 import { indigo } from '@material-ui/core/colors';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
-const TotalProfit = (props) => (
-  <Card {...props}>
+const TotalProfit = ({ saldo }) => (
+  <Card>
     <CardContent>
       <Grid
         container
@@ -22,13 +23,14 @@ const TotalProfit = (props) => (
             gutterBottom
             variant="h6"
           >
-            TOTAL PROFIT
+            Saldo
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
+            aria-label={`${saldo} reais`}
           >
-            $23,200
+            {`R$ ${saldo.toFixed(2).replace('.', ',')}`}
           </Typography>
         </Grid>
         <Grid item>
@@ -38,6 +40,7 @@ const TotalProfit = (props) => (
               height: 56,
               width: 56
             }}
+            aria-label="Ícone com símbolo de dinheiro do lado direito"
           >
             <AttachMoneyIcon />
           </Avatar>
@@ -46,5 +49,9 @@ const TotalProfit = (props) => (
     </CardContent>
   </Card>
 );
+
+TotalProfit.propTypes = {
+  saldo: PropTypes.number,
+};
 
 export default TotalProfit;
